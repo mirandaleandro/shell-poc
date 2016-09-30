@@ -37,7 +37,8 @@ export function mount() {
 export function unmount() {
     return new Promise((resolve, reject) => {
         console.log(`${appName} is unmounted`);
-        omegaAppContainer.empty();
+        angular.element(omegaAppContainer).scope().oogabooga = false;
+        angular.element(omegaAppContainer).scope().$digest();
         resolve();
     });
 }
